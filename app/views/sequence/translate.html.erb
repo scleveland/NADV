@@ -1,0 +1,22 @@
+Results
+<br/>
+<br/>
+Nucleotides:<br/>
+<%= @seq %><br/><br/>
+Amino Acids:<br/>
+<%= @aaseq %>
+<br/><br/>
+Both:<br/>
+<div style="font-family: 'courier'; ">
+<%- rows = (@seq.length/30).abs %>
+<%- i = 0 %>
+<%- while i < rows  do -%>
+   <%=  ((10*i)+1).to_s+"  " %><%= @aaseq_w_space[30*i..30*i+30-1].html_safe %><br/>
+   <%=  ((30*i)+1).to_s+"  " %><%= @seq.upcase[30*i..30*i+30-1] %><br/>
+   <%- i +=1 %>
+<%- end -%>
+</div>
+<%= form_tag({:controller => "sequence", :action => "download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= submit_tag("Download") %>
+<% end %>
