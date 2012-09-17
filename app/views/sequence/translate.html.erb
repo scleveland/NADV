@@ -10,9 +10,10 @@ Both:<br/>
 <% nuc_num = 60 %>
 <div style="font-family: 'courier'; ">
 <%- rows = (@seq.length/nuc_num).abs %>
+
 <%- i = 0 %>
 <table>
-<%- while i < rows  do -%>
+<%- while i <= rows  do -%>
    <tr>
      <td><%=  ((nuc_num/3*i)+1).to_s%></td><td></td>&nbsp;&nbsp;<td><%= @aaseq_w_space[nuc_num*i..nuc_num*i+nuc_num-1] %></td>
    </tr>

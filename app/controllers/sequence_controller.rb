@@ -69,7 +69,7 @@ class SequenceController < ApplicationController
     rows = (seq.length/nuc_num).abs 
     i = 0  
     # Create a new file and write to it   
-    while i < rows  do 
+    while i <= rows  do 
       out_string = out_string + ((nuc_num/3*i)+1).to_s + "\t" + aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "\n"
       out_string = out_string + ((nuc_num*i)+1).to_s + "\t" + seq.upcase[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "\n"
       i +=1  
