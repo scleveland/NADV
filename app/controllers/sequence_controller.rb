@@ -5,6 +5,7 @@ class SequenceController < ApplicationController
   end
   def translate
     @seq =  Bio::Sequence::NA.new(params[:nuc_seq])
+    @nuc_num = params[:nuc_num].to_i
     #@aaseq = @seq.translate
     @aaseq=""
     @aaseq_w_space=""
@@ -65,7 +66,7 @@ class SequenceController < ApplicationController
       end
       
     end
-    nuc_num = 60
+    nuc_num = params[:nuc_num].to_i
     rows = (seq.length/nuc_num).abs 
     i = 0  
     # Create a new file and write to it   

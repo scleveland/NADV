@@ -9,6 +9,9 @@ Paste Nucleotide sequence in to the text area for translation and display.
         <%= form_tag({:controller => "sequence", :action => "translate"}, :method => "post", :class => "form") do %>
           <%= label_tag(:nuc_seq, "Nucleotide Sequence:") %><br/>
           <%= text_area_tag(:nuc_seq, "", :size => "75x10") %><br/>
+          <br/><br/>
+          <%= label_tag(:nuc_num, "Number of Nucleotides per line for display: ") %>
+          <%= text_field_tag(:nuc_num, "60", :size => "5") %><br/><br/>
           <%= submit_tag("Translate") %>
         <% end %>
         

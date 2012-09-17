@@ -7,7 +7,7 @@ Amino Acids:<br/>
 <%= @aaseq %>
 <br/><br/>
 Both:<br/>
-<% nuc_num = 60 %>
+<% nuc_num = @nuc_num %>
 <div style="font-family: 'courier'; ">
 <%- rows = (@seq.length/nuc_num).abs %>
 
@@ -26,5 +26,6 @@ Both:<br/>
 </div>
 <%= form_tag({:controller => "sequence", :action => "download"}, :method => "post", :class => "form") do %>
   <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= submit_tag("Download") %>
 <% end %>
