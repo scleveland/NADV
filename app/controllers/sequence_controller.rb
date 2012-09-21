@@ -176,9 +176,11 @@ class SequenceController < ApplicationController
     i = 0  
     out_string = ""
     # Create a new file and write to it   
+    aaseq_count = 1
     while i <= rows  do 
-      out_string = out_string + ((nuc_num/3*i)+1).to_s + "\t" + aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "\n"
+      out_string = out_string + aaseq_count.to_s + "\t" + aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "\n"
       out_string = out_string + ((nuc_num*i)+1).to_s + "\t" + nuc_seq.upcase[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "\n"
+      aaseq_count += aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)].gsub(" ", "").length
       i +=1  
     end
     return out_string
@@ -189,10 +191,14 @@ class SequenceController < ApplicationController
     i = 0  
     out_string = "<table>"
     # Create a new file and write to it   
+    aaseq_count = 1
     while i <= rows  do 
+        
       out_string= out_string + "<tr>"
-      out_string = out_string + "<td>" + ((nuc_num*i)+1).to_s + "</td><td>&nbsp;&nbsp;</td><td>" + aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "</td></tr><tr>"
+      out_string = out_string + "<td>" + aaseq_count.to_s + "</td><td>&nbsp;&nbsp;</td><td>" + aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "</td></tr><tr>"
       out_string = out_string + "<td>" + ((nuc_num*i)+1).to_s + "</td><td>&nbsp;&nbsp;</td><td>" + nuc_seq.upcase[(nuc_num*i)..(nuc_num*i+nuc_num-1)] + "</td></tr>"
+      
+      aaseq_count += aaseq[(nuc_num*i)..(nuc_num*i+nuc_num-1)].gsub("_", "").length
       i +=1  
     end
     out_string=out_string+"</table>"
