@@ -4,6 +4,8 @@ Nadv::Application.routes.draw do
   match 'sequences' =>'sequence#index'
   match 'sequences/results' =>'sequence#translate'
   match 'sequences/download' =>'sequence#download'
+  match 'sequences/new_results' =>'sequence#new_results'
+  match 'sequences/new_download' =>'sequence#new_download'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

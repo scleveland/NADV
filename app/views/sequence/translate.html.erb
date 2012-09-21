@@ -8,14 +8,14 @@ Amino Acids:<br/>
 <br/><br/>
 Both:<br/>
 <% nuc_num = @nuc_num %>
-<div style="font-family: 'courier';background-color:white; ">
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
 <%- rows = (@seq.length/nuc_num).abs %>
 
 <%- i = 0 %>
 <table>
 <%- while i <= rows  do -%>
    <tr>
-     <td><%=  ((nuc_num/3*i)+1).to_s%></td><td></td>&nbsp;&nbsp;<td><%= @aaseq_w_space[nuc_num*i..nuc_num*i+nuc_num-1] %></td>
+     <td><%=  ((nuc_num/3*i)+1).to_s%></td><td></td>&nbsp;&nbsp;<td><%= @aaseq_w_space[nuc_num*i..nuc_num*i+nuc_num-1].html_safe %></td>
    </tr>
    <tr>
      <td><%=  ((nuc_num*i)+1).to_s%></td><td>&nbsp;&nbsp;</td><td><%= @seq.upcase[nuc_num*i..nuc_num*i+nuc_num-1] %></td>

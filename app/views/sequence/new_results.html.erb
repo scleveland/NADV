@@ -1,0 +1,89 @@
+<h2>Results</h2>
+
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reading Frame 1
+<%= @display1.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 1%>
+  <%= hidden_field_tag 'reverse', false%>
+  <%= submit_tag("Download") %>
+<% end %>
+<br/>
+<hr/>
+<br/>
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reading Frame 2
+<%= @display2.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 2%>
+  <%= hidden_field_tag 'reverse', false%>
+  <%= submit_tag("Download") %>
+<% end %>
+<br/>
+<hr/>
+<br/>
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reading Frame 3
+<%= @display3.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 3%>
+  <%= hidden_field_tag 'reverse', false%>
+  <%= submit_tag("Download") %>
+<% end %>
+<br/>
+<hr/>
+<br/>
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reverse Complement - Reading Frame 1 
+<%= @display4.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 1%>
+  <%= hidden_field_tag 'reverse', true%>
+  <%= submit_tag("Download") %>
+<% end %>
+<br/>
+<hr/>
+<br/>
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reverse Complement - Reading Frame 2
+<%= @display5.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 2%>
+  <%= hidden_field_tag 'reverse', true%>
+  <%= submit_tag("Download") %>
+<% end %>
+<br/>
+<hr/>
+<br/>
+<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+Reverse Complement - Reading Frame 3
+<%= @display6.html_safe %>
+</div>
+<br/>
+<%= form_tag({:controller => "sequence", :action => "new_download"}, :method => "post", :class => "form") do %>
+  <%= hidden_field_tag 'nuc_seq', @seq%>
+  <%= hidden_field_tag 'nuc_num', @nuc_num%>
+  <%= hidden_field_tag 'frame', 3%>
+  <%= hidden_field_tag 'reverse', true%>
+  <%= submit_tag("Download") %>
+<% end %>
