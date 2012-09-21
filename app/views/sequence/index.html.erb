@@ -13,7 +13,7 @@ Paste Nucleotide sequence in to the text area for translation and display.
           <br/><br/>
           <%= label_tag(:nuc_num, "Number of Nucleotides per line for display: ") %>
           <%= text_field_tag(:nuc_num, "60", :size => "5") %><br/><br/>
-          <%= submit_tag("Translate") %>
+          <%= submit_tag("Translate",:class=>"button") %>
         <% end %>
       </div>
     </div>
