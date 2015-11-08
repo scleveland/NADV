@@ -1,7 +1,7 @@
 <h2>Results</h2>
 NOTE - the text files for download use spaces instead of _.  For proper alignment viewing in a text editor or other tool be sure you are using a monospaced font such as courier. 
 <br/><br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reading Frame 1
 <%= @display1.html_safe %>
 </div>
@@ -11,12 +11,14 @@ Reading Frame 1
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 1%>
   <%= hidden_field_tag 'reverse', false%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
 <br/>
 <hr/>
 <br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reading Frame 2
 <%= @display2.html_safe %>
 </div>
@@ -26,12 +28,14 @@ Reading Frame 2
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 2%>
   <%= hidden_field_tag 'reverse', false%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
 <br/>
 <hr/>
 <br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reading Frame 3
 <%= @display3.html_safe %>
 </div>
@@ -41,12 +45,14 @@ Reading Frame 3
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 3%>
   <%= hidden_field_tag 'reverse', false%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
 <br/>
 <hr/>
 <br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reverse Complement - Reading Frame 1 
 <%= @display4.html_safe %>
 </div>
@@ -56,12 +62,14 @@ Reverse Complement - Reading Frame 1
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 1%>
   <%= hidden_field_tag 'reverse', true%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
 <br/>
 <hr/>
 <br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reverse Complement - Reading Frame 2
 <%= @display5.html_safe %>
 </div>
@@ -71,12 +79,14 @@ Reverse Complement - Reading Frame 2
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 2%>
   <%= hidden_field_tag 'reverse', true%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
 <br/>
 <hr/>
 <br/>
-<div style="font-family: 'courier';background-color:white;padding-left:5px; ">
+<div class="translated">
 Reverse Complement - Reading Frame 3
 <%= @display6.html_safe %>
 </div>
@@ -86,5 +96,8 @@ Reverse Complement - Reading Frame 3
   <%= hidden_field_tag 'nuc_num', @nuc_num%>
   <%= hidden_field_tag 'frame', 3%>
   <%= hidden_field_tag 'reverse', true%>
-  <%= submit_tag("Download",:class=>"button") %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+   <i class="icon-ok icon-white"></i> Download
+  <% end %>
 <% end %>
+<br><br>

@@ -36,3 +36,8 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+group(:development, :test) do
+
+  platforms(:ruby_19) { gem "ruby-debug19", :require => nil }
+
+end

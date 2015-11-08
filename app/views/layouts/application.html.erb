@@ -2,8 +2,11 @@
 <html>
 <head>
   <title>NADV</title>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/red/style", "web-app-theme/override", :cache => true %>
+  <%= stylesheet_link_tag "base", "web-app-theme/themes/drastic-dark/style", :cache => true %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+  <%= stylesheet_link_tag "bootflat", :cache => true %>
   <%= javascript_include_tag :defaults, :cache => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tag %>
   <script type="text/javascript">
 
@@ -19,10 +22,11 @@
 
   </script>
 </head>
+
 <body>
   <div id="container">
     <div id="header">
-      <h1><a href="/">NADV</a></h1>
+      <h1><a href="/">NADV - Nucleotide Amino acid Derived Visualization</a></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
           <!--<li><a href="#"><%= t("web-app-theme.profile", :default => "Profile") %></a></li>
@@ -42,18 +46,22 @@
           </div>
         <% end -%>
       </div>
+      
       <div id="main">
         <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> NQT.</p>
-          </div>      
-        </div>
       </div>
+      
       <div id="sidebar">
         <%= yield :sidebar %>
       </div>
     </div>    
+    <div id="footer">
+      <div class="block">
+        <p>Copyright &copy; <%= Time.now.year %> - Sean B. Cleveland - <a href="http://obakelabs.com" style="color:white;">Obake Labs</a>
+        <span class="badge badge-info pull-right"><a href="https://github.com/scleveland/NADV" style="color:white;">Fork On Github</a></span></p>
+      </div>      
+    </div>
+    <div id="logo"><%= image_tag("obake-logo2.png", width: 200)%></div>
   </div>
 </body>
 </html>

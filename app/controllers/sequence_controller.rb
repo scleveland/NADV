@@ -100,24 +100,21 @@ class SequenceController < ApplicationController
   end
   
   def new_results
-    @seq =  Bio::Sequence::NA.new(params[:nuc_seq])
-    out_string =""
-    aaseq=""
-    @nuc_num = params[:nuc_num].to_i
-     @display1 = create_translation_alignment_html(@seq, @nuc_num, "_", 1)
-     @display2 = create_translation_alignment_html(@seq, @nuc_num, "_", 2)
-     @display3 = create_translation_alignment_html(@seq, @nuc_num, "_", 3)
-    # @display1 = create_translation_alignment_html(seq, nuc_num, "&nbsp;", 1)
-    #     @display2 = create_translation_alignment_html(seq, nuc_num, "&nbsp;", 2)
-    #     @display3 = create_translation_alignment_html(seq, nuc_num, "&nbsp;", 3)
-    #     
-    @display4 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 1)
-    @display5 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 2)
-    @display6 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 3)
-    #render :file=> out_string
-    # send_data(out_string,
-    # :type => 'text/csv; charset=utf-8; header=present',
-    # :filename => "output.txt")
+    unless params[:nuc_seq].nil? || params[:nuc_seq].empty?
+      @seq =  Bio::Sequence::NA.new(params[:nuc_seq])
+      out_string =""
+      aaseq=""
+      @nuc_num = params[:nuc_num].to_i
+      @display1 = create_translation_alignment_html(@seq, @nuc_num, "_", 1)
+      @display2 = create_translation_alignment_html(@seq, @nuc_num, "_", 2)
+      @display3 = create_translation_alignment_html(@seq, @nuc_num, "_", 3)
+      @display4 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 1)
+      @display5 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 2)
+      @display6 = create_translation_alignment_html(@seq.complement, @nuc_num, "_", 3)
+    else
+      flash[:error] = "A nucleotide sequence is required!"
+      redirect_to :back
+    end
   end
   
   private
