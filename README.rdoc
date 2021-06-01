@@ -1,3 +1,4 @@
 NADV is a web application for translating nucleotide sequences in the first reading frame only to amino acids when the a start codon is encountered and stopping when the stop codon is encountered.  The results are displayed and can be downloaded in an alignment where the amino acids are aligned with their corresponding codons.  The default number of nucleotides per line in the output is 60.
 
 This is a Ruby on Rails Application so to get started I recommend cloning the repository and running bundle install and then rake db:setup and it should be good to go.
+
