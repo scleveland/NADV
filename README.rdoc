@@ -1,4 +1,17 @@
 NADV is a web application for translating nucleotide sequences in the first reading frame only to amino acids when the a start codon is encountered and stopping when the stop codon is encountered.  The results are displayed and can be downloaded in an alignment where the amino acids are aligned with their corresponding codons.  The default number of nucleotides per line in the output is 60.
 
-This is a Ruby on Rails Application so to get started I recommend cloning the repository and running bundle install and then rake db:setup and it should be good to go.
+This is a Ruby on Rails Application that is unfortunately rather old but has been containerized. So you will need the Docker Runtime Environment.
 
+You can choose to build it yourself with:
+
+docker build -t nadv .
+
+You can then run the application using:
+
+docker run --name nadv_app -p 127.0.0.1:3000:3000  -d nadv 
+
+You can then point your browser at http://localhots:3000 and use the application
+
+If you don't wish to build you own container you can use an existing image with:
+
+docker run --name nadv_app -p 127.0.0.1:3000:3000 scleveland/nadv:latest
