@@ -15,7 +15,9 @@ COPY Gemfile.lock /app/
 
 RUN bundle install
 ADD . /app/
+RUN RAILS_ENV=production bundle exec rake assets:precompile
 # Default command to run
-CMD ["rails", "s"]
-
-EXPOSE 3000
+#CMD ["rails", "s"]
+EXPOSE ${PORT}
+#CMD ["sh", "-c","rails server -b 0.0.0.0 -p ${PORT}"]
+CMD RAILS_ENV=production bundle exec rails server -b 0.0.0.0 -p $PORT
