@@ -1,18 +1,18 @@
-This application is designed to translate a nucleotide sequence in all reading frames and the reverse complement when the start codon is encountered.  The results will be the Amino Acid sequence or sequences derived from the nucleotide sequence - the results are displayed with the Amino Acids aligned over the nucleotides and can be downloaded as a textfile.
+<h3>This application is designed to translate a nucleotide sequence in all reading frames and the reverse complement when the start codon is encountered.  The results will be the Amino Acid sequence or sequences derived from the nucleotide sequence - the results are displayed with the Amino Acids aligned over the nucleotides and can be downloaded as a textfile.
 
 Paste Nucleotide sequence in to the text area for translation and display.
-
+</h3>
 <br/><br/>
 <div class="block">
   <div class "content">
     <div class "inner">
       <div class "wat-cf">
         <%= form_tag({:controller => "sequence", :action => "new_results"}, :method => "post", :class => "form") do %>
-          <%= label_tag(:nuc_seq, "Nucleotide Sequence:") %><br/>
-          <%= text_area_tag(:nuc_seq, "", :size => "75x10") %><br/>
+          <h1><%= label_tag(:nuc_seq, "Nucleotide Sequence:") %></h1><br/>
+          <%= text_area_tag(:nuc_seq, "", :size => "250x20") %><br/>
           <br/><br/>
-          <%= label_tag(:nuc_num, "Number of Nucleotides per line for display: ") %>
-          <%= text_field_tag(:nuc_num, "60", :size => "5") %><br/><br/>
+          <h3><%= label_tag(:nuc_num, "Number of Nucleotides per line for display: ") %>
+          <%= text_field_tag(:nuc_num, "60", :size => "5") %></h3><br/><br/>
           <%#= submit_tag("Translate",:class=>"btn btn-lg button") %>
           <%= button_tag(type: 'submit', class: "btn btn-success btn-lg") do %>
            <i class="icon-ok icon-white"></i> Translate
