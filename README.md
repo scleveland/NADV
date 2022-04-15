@@ -24,5 +24,5 @@ You can then run the application using:
 ```
 docker run --name nadv_app -p 80:80 -e PORT=80 -e RAILS_ENV=production nadv
 ```
-You can then point your browser at http://localhots and use the application
+You can then point your browser at http://localhost and use the application
 
